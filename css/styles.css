@@ -96,16 +96,18 @@ input {
     letter-spacing: 0.54px;
     text-transform: uppercase;
     text-decoration: none;
+    display: block;
+    padding: 24px 0;
 }
 
 @media screen and (min-width:768px) {
-    .header-logo {
+    .logo {
         margin-right: 120px;
     }
 }
 
 @media screen and (min-width:1158px) {
-    .header-logo {
+    .logo {
         margin-right: 76px;
     }
 }
@@ -136,6 +138,7 @@ input {
     color: #2E2F42;
     padding: 24px 0;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .header-link:active,
@@ -162,6 +165,13 @@ input {
 
 .address {
     font-style: normal;
+    margin-bottom: 48px;
+}
+
+@media screen and (min-width:768px) {
+    .address {
+        margin-bottom: 0;
+    }
 }
 
 .container-address {
@@ -193,23 +203,28 @@ input {
 .address-link {
     display: block;
     color: #434455;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.32px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
     text-decoration: none;
-    padding: 24px 0;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media screen and (min-width:768px) {
     .address-link {
-        padding: 0;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
     }
 }
 
 @media screen and (min-width:1158px) {
     .address-link {
-        padding: 24px 0;
+        font-size: 16px;
+        line-height: 1.15;
+        letter-spacing: 0.02em;
     }
 }
 
@@ -256,6 +271,16 @@ input {
     padding: 72px 24px 40px 16px;
 }
 
+.mob-menu.is-open {
+    transform: translatey(0);
+}
+
+@media screen and (min-width:768px) {
+    .mob-menu {
+        display: none;
+    }
+}
+
 .menu-btn-close {
     position: absolute;
     top: 24px;
@@ -290,10 +315,14 @@ input {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 168px;
+    margin-bottom: auto
 }
 
 .menu-nav-item {}
+
+.menu-nav-item:first-child .menu-nav-link {
+    color: #404BBF;
+}
 
 .menu-nav-link {
     display: block;
@@ -316,9 +345,12 @@ input {
 
 .menu-adrs-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 24px;
-    margin-bottom: 48px;
+}
+
+.menu-adrs-item:last-child .menu-adrs-link {
+    color: #404BBF;
 }
 
 .menu-adrs-link {
@@ -329,12 +361,6 @@ input {
     letter-spacing: 0.02em;
     text-decoration: none;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.menu-adrs-link:hover,
-.menu-adrs-link:active,
-.menu-adrs-link:focus {
-    color: #404BBF;
 }
 
 .menu-soc-list {
@@ -361,11 +387,11 @@ input {
 
 .hero {
     background-color: #2E2F42;
-    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/background.jpg);
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/background-mob-1x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 188px 0;
+    padding: 72px 0;
     max-width: 320px;
     margin: 0 auto;
     
@@ -420,12 +446,12 @@ input {
 .hero-title {
     color: #FFFFFF;
     text-align: center;
-    font-size: 56px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 1.07;
-    letter-spacing: 1.12px;
-    max-width: 288px;
-    margin: 0 auto 48px;
+    letter-spacing: 0.02em;
+    max-width: 217px;
+    margin: 0 auto 72px;
 }
 
 @media screen and (min-width:768px) {
@@ -627,9 +653,7 @@ input {
 
 @media screen and (min-width:768px) {
     .container-team {
-        max-width: 768px;
-        padding-left: 108px;
-        padding-right: 108px;
+        max-width: 584px;
     }
 }
 
@@ -643,6 +667,7 @@ input {
 
 .section-team {
     background-image: linear-gradient(to bottom, rgba(244, 244, 253, 1), rgba(244, 244, 253, 1));
+    padding: 96px 0;
 }
 
 
@@ -667,6 +692,11 @@ input {
     }
 }
 
+.container-text {
+    padding: 32px 0;
+    text-align: center;
+}
+
 .team-item {
     width: 100%;
     background-color: #FFFFFF;
@@ -685,11 +715,6 @@ input {
     .team-item {
         width: calc((100% - 72px) / 4);
     }
-}
-
-.container-text {
-    padding: 32px 0;
-    text-align: center;
 }
 
 .team-list {
@@ -848,7 +873,7 @@ input {
 }
 
 @media screen and (min-width:1158px) {
-    .page-footer {
+    .footer {
         padding: 100px 0;
     }
 }
@@ -856,32 +881,31 @@ input {
 .container-footer {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-}
-
-@media screen and (min-width:768px) {}
-
-@media screen and (min-width:1158px) {
-    .container-footer {
-        align-items: baseline;
-    }
-}
-
-.footer-logo-box {
-    display: inline-block;
-    margin-right: 72px;
+    gap: 72px 24px;
+    justify-content: center;
 }
 
 @media screen and (min-width:768px) {
-    .footer-logo-box {
-        margin-right: 24px;
+    .container-footer {
+        width: 584px;
+        justify-content: left;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .container-footer {
+        min-width: 1158px;
+        gap: 0;
     }
 }
 
 @media screen and (min-width:1158px) {
     .footer-logo-box {
         margin-right: 120px;
-        margin-bottom: 0;
+    }
+
+    .footer-social {
+        margin-right: 80px;
     }
 }
 
@@ -910,24 +934,12 @@ input {
     width: 264px;
 }
 
-.footer-social {
-    display: inline-block;
-    margin: 0 auto;
-    margin-bottom: 72px;
-}
-
 @media screen and (min-width:768px) {
-    .footer-social {
-        margin-left: 0;
-        margin-bottom: 0;
+    .footer-descr {
+        width: 264px;
     }
 }
 
-@media screen and (min-width:1158px) {
-    .footer-social {
-        margin-right: auto;
-    }
-}
 
 .footer-media {
     color: #FFFFFF;
@@ -1063,6 +1075,10 @@ input {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
+}
+
+.is-hidden {
+
 }
 
 .modal {
